@@ -1,0 +1,21 @@
+apiVersion: 1.0.0
+metadata:
+  name: image_test
+projects:
+  - name: image_test
+    source:
+      type: git
+      location: 'https://https://github.com/titandrubbel/TEST'
+components:
+  - type: dockerimage
+    image: rdrubbel/test_pred:defect_predictor_image
+    mountSources: true
+    endpoints:
+      - name: test_image
+        port: 8080
+        attributes:
+          protocol: http
+          secure: 'false'
+          public: 'true'
+          discoverable: 'false'
+    memoryLimit: 2048M
