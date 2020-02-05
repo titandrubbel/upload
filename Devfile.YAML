@@ -1,0 +1,20 @@
+metadata:
+  name: test-docker1
+projects:
+  - name: Docker_image
+    source:
+      location: 'https://github.com/titandrubbel/TEST.git'
+      type: git
+      branch: master
+attributes:
+  persistVolumes: 'false'
+components:
+  - id: ms-python/python/latest
+    memoryLimit: 512Mi
+    type: chePlugin
+  - mountSources: true
+    memoryLimit: 512Mi
+    type: dockerimage
+    alias: python
+    image: 'docker.io/rdrubbel/test_pred:defect_predictor_image'
+apiVersion: 1.0.0
