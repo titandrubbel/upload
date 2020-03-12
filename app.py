@@ -1,4 +1,4 @@
-UPLOAD_FOLDER = 'C:/uploads'
+UPLOAD_FOLDER = ''${CHE_PROJECTS_ROOT}/test''
 
 app = Flask(__name__)
 app.secret_key = "secret key"
