@@ -1,5 +1,3 @@
-from flask import Flask
-
 UPLOAD_FOLDER = 'C:/uploads'
 
 app = Flask(__name__)
