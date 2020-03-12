@@ -1,11 +1,8 @@
 import requests
 
 url = "http://localhost:5000/"
-fin = open('main.py', 'rb')
-files = {'file': fin}
+files = {'file': open('main.py', 'rb')}
 
-try:
-  r = requests.post(url, files=files)
-	print r.text
-finally:
-	fin.close()
+r = requests.post(url, files=files)
+print(r.status_code)
+print(r.text)
