@@ -1,7 +1,7 @@
 import requests
 import os 
 
-url = "https://routejcnusx3h-rdrubbel-che.8a09.starter-us-east-2.openshiftapps.com/"
+url = "http://localhost:5000/api/classification/classify"
 ALLOWED_EXTENSIONS = set(['yaml'])
 
 files = os.listdir("/projects/test")
