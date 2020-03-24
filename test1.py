@@ -2,15 +2,16 @@ import requests
 import os 
 
 url = "http://localhost:5000/api/classification/classify"
-ALLOWED_EXTENSIONS = set(['yaml'])
 
-#files = os.listdir("/projects/test")
+def get_filename(prompt):
+    while True:
+        fn = input(prompt)
+        if os.path.exists(fn): return fn
+        print("The file you selected does not exist, please try again")
 
-#files = {'file': open('{}'.format(files[1]), 'rb')}
+file = get_filename("Enter a filename: ")
 
-file = input("Enter a filename: ")
-
-files = {'file': open(file), 'rb')}
+files = {'file': open(file, 'rb')}
 
 r = requests.post(url, files=files)
 print(r.status_code)
