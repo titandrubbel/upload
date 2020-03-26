@@ -2,6 +2,7 @@ import requests
 import os 
 
 url = "http://localhost:5000/api/classification/classify"
+#os.chdir("/projects/.theia")
 
 def get_filename(prompt):
     while True:
